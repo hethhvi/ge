@@ -10,6 +10,43 @@
   <name>ge</name>
   <url>http://maven.apache.org</url>
 
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <phase>clean</phase>
+            <configuration>
+              <tasks>
+               <echo> clean target</echo>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+	
+	<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+		<configuration>
+          <executable>mvn</executable>
+		  <arguments>
+            <argument>-version</argument>
+			</argument>
+			</configuration>
+			</plugin>
+			</plugins>
+
+
+  </build>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
